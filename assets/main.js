@@ -1,4 +1,5 @@
 // COMPLETE THE TODOs BELOW...
+
 // Note: The primary TODOs for this Activity will not require 
 // you to edit the HTML or CSS.
 
@@ -8,13 +9,28 @@
 // TODO 1: Use querySelector to assign EACH of the above 
 // elements to a variable, just like this:
 let searchButton = document.querySelector('#search-button')
+let textBox = document.querySelector("#textbox")
+let sentence = document.querySelector("#sentence")
+let searchResults = document.querySelector("#search-results")
+
+
+// TODO 2: Write an IF statement which determines whether
+// the user-supplied string from #textbox is included in
+// the #sentence string.
+
 
 searchButton.addEventListener('click', function () {
- 
-  // TODO 2: Write an IF statement which determines whether
-  // the user-supplied string from #textbox is included in
-  // the #sentence string.
-  
+  if (sentence.innerHTML.includes(textBox.value)) {
+    searchResults.innerHTML = (textBox.value)
+    searchResults.innerHTML = ("word found")
+    console.log(textBox.value)
+    
+  } else {
+    searchResults.innerHTML = ("word NOT found")
+    console.log("No Match")
+    
+  }
+
   // Hint 1: To get the user-supplied string from the input 
   // box (#textbox), use the property .value on the variable
   // you assigned the textbox element to.
